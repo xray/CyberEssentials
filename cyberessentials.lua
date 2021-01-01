@@ -1,5 +1,5 @@
-local strHelper = require "scripts/ce_tools/stringhelpers"
-local headingCalculator = require "scripts/ce_tools/headingcalculator"
+local strHelper = require "cyberessentials/ce_tools/stringhelpers"
+local headingCalculator = require "cyberessentials/ce_tools/headingcalculator"
 
 
 -- local strHelper = require "tools.stringhelpers"
@@ -7,7 +7,7 @@ local headingCalculator = require "scripts/ce_tools/headingcalculator"
 
 
 print("CyberEssentials activated...")
-local previousPosition = {false}
+local previousPosition = false
 
 
 local function rawPositionToList(pos)
@@ -64,7 +64,7 @@ function GoDown(amount)
 end
 
 function Back()
-    if previousPosition[1] == false then
+    if (not previousPosition) then
         print("There is no previous position to move you to.")
     else
         Game.TeleportPlayerToPosition(previousPosition.xCoord, previousPosition.yCoord, previousPosition.zCoord)
