@@ -13,7 +13,7 @@
 > **Note**: You'll need to activate CyberEssentials every time you relaunch the game.  
 1. Open Cyberpunk 2077
 1. Once in game, open the Cyber Engine Tweaks Console
-1. Run the command `dofile("bin/x64/scripts/cyberessentials.lua")`
+1. Run the command `dofile("cyberessentials/cyberessentials.lua")`
 1. You'll know it worked if you see "CyberEssentials activated..." appear in the console  
 
 ## Commands
