@@ -6,8 +6,8 @@
 
 ## To Install
 1. Navigate to your Cyberpunk install
-1. Go to the directory `bin/x64/` and create a `scripts` folder
-1. Move the `ce_tools` folder and cyberessentials.lua files inside of it
+1. Go to the directory `bin/x64/plugins/cyber_engine_tweaks/mods` 
+1. copy the `cyberessentials` folder into the `mods` folder
 
 ## To Activate
 > **Note**: You'll need to activate CyberEssentials every time you relaunch the game.  
