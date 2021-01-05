@@ -14,9 +14,21 @@
 1. Open Cyberpunk 2077
 1. Once in game, open the Cyber Engine Tweaks Console
 1. Run the command `dofile("cyberessentials/cyberessentials.lua")`
-1. You'll know it worked if you see "CyberEssentials activated..." appear in the console  
+1. You'll know it worked if you see "[CyberEssentials] Mod activated..." appear in the console  
 
 ## Commands
+
+### SetWarp("`name`")
+> **Note**: To use this command, you must put quotes around the name of the warp you want to create.  
+
+**Description:** This command allows you to create a new warp based on your current position that you can teleport to using the `Warp()` command.  
+**Usage:** `SetWarp("My new warp")`
+
+### Warp("`name`")
+> **Note**: To use this command, you must put quotes around the name of the warp you want to teleport to.  
+
+**Description:** This command allows you to teleport to any previously created  warp locations.  
+**Usage:** `Warp("V's Apartment")`
 
 ### MoveForward(`distance`)
 **Description:** This command will move you in the direction you're looking by the specified distance.  

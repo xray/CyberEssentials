@@ -1,12 +1,14 @@
-local strHelper = require "cyberessentials/ce_tools/stringhelpers"
-local headingCalculator = require "cyberessentials/ce_tools/headingcalculator"
+local strHelper = require "cyberessentials/tools/stringhelpers"
+local headingCalculator = require "cyberessentials/tools/headingcalculator"
+local warps = require "cyberessentials/tools/repo"
 
 
--- local strHelper = require "tools.stringhelpers"
--- local headingCalculator = require "tools.headingcalculator"
+-- local strHelper = require "ce_tools.stringhelpers"
+-- local headingCalculator = require "ce_tools.headingcalculator"
+-- local warps = require "ce_tools.repo"
 
 
-print("CyberEssentials activated...")
+print("[CyberEssentials] Mod activated...")
 local previousPosition = false
 
 
@@ -38,6 +40,37 @@ local function getPlayerInfo()
     }
 end
 
+function SetWarp(name)
+    -- local player = {xCoord = 50, yCoord = 60, zCoord = 70}
+    local player = getPlayerInfo()
+    local current_warps = GetWarps()
+
+    for warp_number, warp_data in pairs(current_warps) do
+        if warp_data.name == name then
+            print("[CyberEssentials] A warp with the name \"" .. name .. "\" already exists, please pick a different name.")
+            return
+        end
+    end
+
+    AddWarp(current_warps, name, player.xCoord, player.yCoord, player.zCoord)
+end
+
+function Warp(warp_name)
+    local player = getPlayerInfo()
+    local current_warps = GetWarps()
+
+    for warp_number, warp_data in pairs(current_warps) do
+        if warp_data.name == warp_name then
+            print("[CyberEssentials] Warping player to \"" .. warp_data.name .. "\".")
+            previousPosition = player
+            Game.TeleportPlayerToPosition(warp_data.x, warp_data.y, warp_data.z)
+            return
+        end
+    end
+
+    print("[CyberEssentials] Warp \"" .. warp_name .. "\" not found.")
+end
+
 function MoveForward(amount)
     local player = getPlayerInfo()
     local offsets = GetOffsets(player.yaw)
@@ -64,11 +97,13 @@ function GoDown(amount)
 end
 
 function Back()
+    local player = getPlayerInfo()
+    
     if (not previousPosition) then
-        print("There is no previous position to move you to.")
+        print("[CyberEssentials] There is no previous position to move you to.")
     else
         Game.TeleportPlayerToPosition(previousPosition.xCoord, previousPosition.yCoord, previousPosition.zCoord)
-        previousPosition = {false}
+        previousPosition = player
     end
 end
 
