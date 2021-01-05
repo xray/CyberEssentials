@@ -13,7 +13,6 @@ local headings = {
 function GetOffsets(yaw)
     for heading, data in pairs(headings) do
         if yaw >= data.min and yaw <= data.max then
-            print(heading)
             return data.offsets
         end
     end
