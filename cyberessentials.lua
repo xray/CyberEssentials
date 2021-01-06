@@ -41,14 +41,13 @@ local function getPlayerInfo()
 end
 
 function SetWarp(name, xCoord, yCoord, zCoord)
+    xCoord = xCoord or player.xCoord
+    yCoord = yCoord or player.yCoord
+    zCoord = zCoord or player.zCoord
+
     -- local player = {xCoord = 50, yCoord = 60, zCoord = 70}
     local player = getPlayerInfo()
-    local current_warps = GetWarps()
-    
-    -- keep coordinate arguments if present, use current position as default if absent
-	xCoord = xCoord or player.xCoord
-	yCoord = yCoord or player.yCoord
-	zCoord = zCoord or player.zCoord
+    local current_warps = GetWarps()	
 
     for warp_number, warp_data in pairs(current_warps) do
         if warp_data.name == name then
