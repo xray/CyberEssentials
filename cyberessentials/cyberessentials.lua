@@ -11,6 +11,21 @@ local repo = repoTools:new({ path = "cyberessentials/data/cyberessentials_data.j
 local previousPosition = false
 print("[CyberEssentials] Mod Activated...")
 
+function ListWarps()
+    local current_warps = repo:GetWarps()
+    local warp_list = "Current Warps: "
+
+    for warp_number, warp_data in ipairs(current_warps) do
+        if warp_number == 1 then
+            warp_list = warp_list .. warp_data.name
+        else
+            warp_list = warp_list .. ", " .. warp_data.name
+        end
+    end
+
+    print("[CyberEssentials] " .. warp_list)
+end
+
 function RemoveWarp(warp_name)
     local current_warps = repo:GetWarps()
 
