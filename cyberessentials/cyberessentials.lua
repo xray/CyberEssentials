@@ -53,7 +53,7 @@ function Warp(warp_name)
         if warp_data.name == warp_name then
             print("[CyberEssentials] Warping player to \"" .. warp_data.name .. "\".")
             previousPosition = my_player
-            Game.TeleportPlayerToPosition(warp_data.x, warp_data.y, warp_data.z)
+            game.TeleportPlayerToPosition(warp_data.x, warp_data.y, warp_data.z)
             return
         end
     end
@@ -69,21 +69,21 @@ function MoveForward(amount)
     local yOffset = amount * offsets.y
 
     previousPosition = my_player
-    Game.TeleportPlayerToPosition(my_player.xCoord + xOffset, my_player.yCoord + yOffset, my_player.zCoord + 1)
+    game.TeleportPlayerToPosition(my_player.xCoord + xOffset, my_player.yCoord + yOffset, my_player.zCoord + 1)
 end
 
 function GoUp(amount)
     local my_player = player:getPlayerInfo()
 
     previousPosition = my_player
-    Game.TeleportPlayerToPosition(my_player.xCoord, my_player.yCoord, my_player.zCoord + amount)
+    game.TeleportPlayerToPosition(my_player.xCoord, my_player.yCoord, my_player.zCoord + amount)
 end
 
 function GoDown(amount)
     local my_player = player:getPlayerInfo()
 
     previousPosition = my_player
-    Game.TeleportPlayerToPosition(my_player.xCoord, my_player.yCoord, my_player.zCoord - amount)
+    game.TeleportPlayerToPosition(my_player.xCoord, my_player.yCoord, my_player.zCoord - amount)
 end
 
 function Back()
@@ -92,7 +92,7 @@ function Back()
     if (not previousPosition) then
         print("[CyberEssentials] There is no previous position to move you to.")
     else
-        Game.TeleportPlayerToPosition(previousPosition.xCoord, previousPosition.yCoord, previousPosition.zCoord)
+        game.TeleportPlayerToPosition(previousPosition.xCoord, previousPosition.yCoord, previousPosition.zCoord)
         previousPosition = my_player
     end
 end

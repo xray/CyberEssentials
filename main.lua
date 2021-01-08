@@ -1,3 +1,10 @@
 require "cyberessentials/cyberessentials"
 
 WhereAmI()
+MoveForward(10)
+GoUp(10)
+GoDown(10)
+Back()
+Warp("V's Apartment")
+SetWarp("test_warp")
+RemoveWarp("test_warp")
