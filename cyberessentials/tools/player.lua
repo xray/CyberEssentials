@@ -1,4 +1,4 @@
-local stringhelpers = require "tools.stringhelpers"
+local stringhelpers = require "cyberessentials/tools/stringhelpers"
 
 Player = {}
 

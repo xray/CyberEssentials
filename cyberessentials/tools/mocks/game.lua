@@ -1,14 +1,14 @@
-local player = require "tools.mocks.player"
+local player = require "cyberessentials/tools/mocks/player"
 
-Game = {}
+local game = {}
 
-function Game.GetPlayer()
+function game.GetPlayer()
     return player
 end
 
-function Game.TeleportPlayerToPosition(xCoord, yCoord, zCoord)
+function game.TeleportPlayerToPosition(xCoord, yCoord, zCoord)
     print("[Mock] Fired: Game.TeleportPlayerToPosition(" .. xCoord .. ", " .. yCoord .. ", " .. zCoord .. ")")
     return true
 end
 
-return Game
+return game

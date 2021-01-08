@@ -1,12 +1,12 @@
-local cyberpunk = require "tools.cyberpunk"
-local playerTools = require "tools.player"
-local headingCalculator = require "tools.headingcalculator"
-local repoTools = require "tools.repo"
+local cyberpunk = require "cyberessentials/tools/cyberpunk"
+local playerTools = require "cyberessentials/tools/player"
+local headingCalculator = require "cyberessentials/tools/headingcalculator"
+local repoTools = require "cyberessentials/tools/repo"
 
 
-local game = cyberpunk:new({ game = Game }).game
+local game = cyberpunk:new().game
 local player = playerTools:new({ game = game })
-local repo = repoTools:new({ path = "data/cyberessentials_data.json"})
+local repo = repoTools:new({ path = "cyberessentials/data/cyberessentials_data.json"})
 
 local previousPosition = false
 print("[CyberEssentials] Mod Activated...")

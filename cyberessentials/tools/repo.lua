@@ -1,4 +1,4 @@
-local json = require "tools.json.json"
+local json = require "cyberessentials/tools/json/json"
 
 Repo = {}
 

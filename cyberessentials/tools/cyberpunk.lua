@@ -1,4 +1,4 @@
-local mock_game = require "tools.mocks.game"
+local mock_game = require "cyberessentials/tools/mocks/game"
 
 Cyberpunk = {}
 
