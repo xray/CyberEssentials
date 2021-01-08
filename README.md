@@ -14,21 +14,33 @@
 1. Open Cyberpunk 2077
 1. Once in game, open the Cyber Engine Tweaks Console
 1. Run the command `dofile("cyberessentials/cyberessentials.lua")`
-1. You'll know it worked if you see "[CyberEssentials] Mod activated..." appear in the console  
+1. You'll know it worked if you see "[CyberEssentials] Mod Activated..." appear in the console  
 
 ## Commands
 
-### SetWarp("`name`")
+### SetWarp("`name`", `optional_XCoord`, `optional_YCoord`, `optional_ZCoord`)
 > **Note**: To use this command, you must put quotes around the name of the warp you want to create.  
 
-**Description:** This command allows you to create a new warp based on your current position that you can teleport to using the `Warp()` command.  
-**Usage:** `SetWarp("My new warp")`
+**Description:** This command allows you to create a new warp based on your current position or a set of coordinates that you can teleport to using the `Warp()` command.  
+**Usages:**  
+- `SetWarp("My new warp")`
+- `SetWarp("The Peralezes' Apartment", -75.815399, -113.607819, 111.161728)`
 
 ### Warp("`name`")
 > **Note**: To use this command, you must put quotes around the name of the warp you want to teleport to.  
 
 **Description:** This command allows you to teleport to any previously created  warp locations.  
 **Usage:** `Warp("V's Apartment")`
+
+### RemoveWarp("`name`")
+> **Note**: To use this command, you must put quotes around the name of the warp you want to remove.  
+
+**Description:** This command allows you to remove a previoulsy created warp.  
+**Usage:** `RemoveWarp("V's Apartment")`
+
+### ListWarps()
+**Description:** This command allows you to view a list of the warps that have been created.  
+**Usage:** `ListWarps()`
 
 ### MoveForward(`distance`)
 **Description:** This command will move you in the direction you're looking by the specified distance.  
