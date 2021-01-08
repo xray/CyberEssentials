@@ -1,0 +1,3 @@
+require "cyberessentials/cyberessentials"
+
+WhereAmI()
