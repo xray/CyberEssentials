@@ -1,3 +1,5 @@
+HeadingCalculator = {}
+
 local headings = {
     north = { min = -22.5, max = 22.5, offsets = { x = 0, y = 1 } },
     northeast = { min = -67.5, max = -22.5, offsets = { x = 0.5, y = 0.5 } },
@@ -10,10 +12,12 @@ local headings = {
     northwest = { min = 22.5, max = 67.5, offsets = { x = -0.5, y = 0.5 } }
 }
 
-function GetOffsets(yaw)
+function HeadingCalculator.GetOffsets(yaw)
     for heading, data in pairs(headings) do
-        if yaw >= data.min and yaw <= data.max then
+        if tonumber(yaw) >= data.min and tonumber(yaw) <= data.max then
             return data.offsets
         end
     end
 end
+
+return HeadingCalculator

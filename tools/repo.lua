@@ -1,10 +1,15 @@
-local json = require "cyberessentials/tools/json/json"
+local json = require "tools.json.json"
 
--- local json = require "ce_tools.json.json"
+Repo = {}
 
+function Repo:new(table)
+    setmetatable(table, self)
+    self.__index = self
+    return table
+end
 
-local function loadCyberEssentialsData()
-    local file = io.open("cyberessentials/data/cyberessentials_data.json", "r")
+local function loadCyberEssentialsData(path)
+    local file = io.open(path, "r")
 
     local content = file:read("*all")
     local ce_data = json.decode(content)
@@ -13,26 +18,26 @@ local function loadCyberEssentialsData()
     return ce_data
 end
 
-local function saveCyberEssentialsData(ce_data)
-    local file = io.open("cyberessentials/data/cyberessentials_data.json", "w+")
+local function saveCyberEssentialsData(ce_data, path)
+    local file = io.open(path, "w+")
 
     file:write(json.encode(ce_data))
     file:close()
 end
 
-local function saveWarps(warps)
-    local ce_data = loadCyberEssentialsData()
+local function saveWarps(warps, path)
+    local ce_data = loadCyberEssentialsData(path)
 
     ce_data.warps = warps
-    saveCyberEssentialsData(ce_data)
+    saveCyberEssentialsData(ce_data, path)
 end
 
-function GetWarps()
-    local ce_data = loadCyberEssentialsData()
+function Repo:GetWarps()
+    local ce_data = loadCyberEssentialsData(self.path)
     return ce_data.warps
 end
 
-function AddWarp(current_warps, name, x, y, z)
+function Repo:AddWarp(current_warps, name, x, y, z)
     local new_warp = {
         name = name,
         x = x,
@@ -41,5 +46,12 @@ function AddWarp(current_warps, name, x, y, z)
     }
 
     table.insert(current_warps, new_warp)
-    saveWarps(current_warps)
+    saveWarps(current_warps, self.path)
 end
+
+function Repo:RemoveWarp(current_warps, number)
+    table.remove(current_warps, number)
+    saveWarps(current_warps, self.path)
+end
+
+return Repo

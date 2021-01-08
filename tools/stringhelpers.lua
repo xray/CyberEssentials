@@ -1,3 +1,5 @@
+StringHelpers = {}
+
 local function combineStringTable(stringTable)
     local combined = ""
 
@@ -8,7 +10,7 @@ local function combineStringTable(stringTable)
     return combined
 end
 
-function SplitString(str, delimiter)
+function StringHelpers.splitString(str, delimiter)
     local length = string.len(str)
     local charTable = {}
     local stringTable = {}
@@ -26,3 +28,5 @@ function SplitString(str, delimiter)
 
     return stringTable
 end
+
+return StringHelpers
