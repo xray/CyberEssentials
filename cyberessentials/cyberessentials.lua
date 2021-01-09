@@ -9,7 +9,6 @@ local player = playerTools:new({ game = game })
 local repo = repoTools:new({ path = "cyberessentials/data/cyberessentials_data.json"})
 
 local previousPosition = false
-print("[CyberEssentials] Mod Activated...")
 
 function ListWarps()
     local current_warps = repo:GetWarps()
