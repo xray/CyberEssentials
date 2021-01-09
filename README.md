@@ -8,13 +8,7 @@
 1. Navigate to your Cyberpunk install
 1. Go to the directory `bin/x64/plugins/cyber_engine_tweaks/mods` 
 1. copy the `cyberessentials` folder into the `mods` folder
-
-## To Activate
-> **Note**: You'll need to activate CyberEssentials every time you relaunch the game.  
-1. Open Cyberpunk 2077
-1. Once in game, open the Cyber Engine Tweaks Console
-1. Run the command `dofile("cyberessentials/cyberessentials.lua")`
-1. You'll know it worked if you see "[CyberEssentials] Mod Activated..." appear in the console  
+1. Launch Cyberpunk 2077 and then open the Cyber Engine Tweaks Console, if you see "[CyberEssentials] Mod activated..." in the console you know it worked. 
 
 ## Commands
 
