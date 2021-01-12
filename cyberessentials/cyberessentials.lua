@@ -4,7 +4,7 @@ local headingCalculator = require "cyberessentials/tools/headingcalculator"
 local repoTools = require "cyberessentials/tools/repo"
 
 
-local game = cyberpunk:new({ game = Game }).game
+local game = cyberpunk:new().game
 local player = playerTools:new({ game = game })
 local repo = repoTools:new({ path = "cyberessentials/data/cyberessentials_data.json"})
 
