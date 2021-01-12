@@ -19,9 +19,10 @@ end)
 registerForEvent("onDraw", function()
 	if (showUI) then
 		--Window Sizing
-		ImGui.SetNextWindowPos(180, 790, ImGuiCond.FirstUseEver)
+		ImGui.SetNextWindowPos(0, 450, ImGuiCond.FirstUseEver)
 		ImGui.SetNextWindowSize(265, 175, ImGuiCond.Appearing)
 
+		-- Window Color Scheme
 		-- If you add/remove here, remember to set ImGui.PopStyleColor(Int) correctly down towards the bottom of the file if it's being used
 		ImGui.PushStyleColor(ImGuiCol.FrameBg, 0.56, 0.06, 0.03, 0.35)
 		--ImGui.PushStyleColor(ImGuiCol.WindowBg, 0.56, 0.06, 0.03, 0.35)
